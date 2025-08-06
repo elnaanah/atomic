@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تصاميم إبداعية - شعار اتوميك</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0A1C3C 0%, #0F0F0F 50%, #1A1A1A 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #007BFF, #19A2A2, #E5E7EB);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .design-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .design-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .design-title {
+            color: #007BFF;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* تصميم 1: الشعار المضلع */
+        .geometric-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .geometric-icon {
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+
+        .hexagon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #007BFF, #19A2A2);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: hexRotate 8s linear infinite;
+        }
+
+        .inner-hexagon {
+            width: 30px;
+            height: 30px;
+            background: #0A1C3C;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .geometric-text {
+            font-size: 2.2em;
+            font-weight: 800;
+            background: linear-gradient(45deg, #007BFF, #19A2A2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* تصميم 2: الشعار الجسيمي */
+        .particle-logo {
+            text-align: center;
+            position: relative;
+            padding: 40px;
+        }
+
+        .particle-field {
+            width: 200px;
+            height: 100px;
+            position: relative;
+            margin: 0 auto 30px;
+        }
+
+        .particle {
+            width: 4px;
+            height: 4px;
+            background: #007BFF;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 0 10px #007BFF;
+        }
+
+        .particle:nth-child(1) { top: 20px; left: 30px; animation: float 3s ease-in-out infinite; }
+        .particle:nth-child(2) { top: 60px; left: 80px; animation: float 4s ease-in-out infinite 0.5s; }
+        .particle:nth-child(3) { top: 40px; left: 130px; animation: float 3.5s ease-in-out infinite 1s; }
+        .particle:nth-child(4) { top: 80px; left: 170px; animation: float 4.5s ease-in-out infinite 1.5s; }
+        .particle:nth-child(5) { top: 10px; left: 100px; animation: float 3.2s ease-in-out infinite 2s; }
+
+        .particle-text {
+            font-size: 2em;
+            font-weight: 300;
+            color: #E5E7EB;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        /* تصميم 3: الشعار المستقبلي */
+        .futuristic-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .circuit-icon {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            background: radial-gradient(circle at center, rgba(0, 123, 255, 0.1), transparent);
+        }
+
+        .circuit-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, #007BFF, transparent);
+            height: 2px;
+        }
+
+        .circuit-line-1 { top: 20px; left: 10px; width: 40px; animation: circuitFlow 2s ease-in-out infinite; }
+        .circuit-line-2 { top: 40px; left: 30px; width: 60px; animation: circuitFlow 2.5s ease-in-out infinite 0.5s; }
+        .circuit-line-3 { top: 60px; left: 15px; width: 50px; animation: circuitFlow 3s ease-in-out infinite 1s; }
+
+        .circuit-dot {
+            width: 6px;
+            height: 6px;
+            background: #19A2A2;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 0 10px #19A2A2;
+        }
+
+        .circuit-dot-1 { top: 18px; right: 25px; animation: pulse 1.5s ease-in-out infinite; }
+        .circuit-dot-2 { bottom: 18px; left: 20px; animation: pulse 2s ease-in-out infinite 0.7s; }
+
+        .futuristic-text {
+            font-size: 1.8em;
+            font-weight: 200;
+            color: #007BFF;
+            letter-spacing: 4px;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+        }
+
+        /* تصميم 4: الشعار الكوكبي */
+        .cosmic-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .solar-system {
+            width: 120px;
+            height: 120px;
+            position: relative;
+        }
+
+        .sun {
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #007BFF, #19A2A2);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 30px #007BFF;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .planet-orbit {
+            position: absolute;
+            border: 1px solid rgba(0, 123, 255, 0.3);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-1 { width: 60px; height: 60px; animation: spin 8s linear infinite; }
+        .orbit-2 { width: 90px; height: 90px; animation: spin 12s linear infinite reverse; }
+        .orbit-3 { width: 120px; height: 120px; animation: spin 16s linear infinite; }
+
+        .planet {
+            width: 8px;
+            height: 8px;
+            background: #E5E7EB;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 0 8px #E5E7EB;
+        }
+
+        .planet-1 { top: -4px; left: 50%; transform: translateX(-50%); }
+        .planet-2 { top: -4px; left: 50%; transform: translateX(-50%); }
+        .planet-3 { top: -4px; left: 50%; transform: translateX(-50%); }
+
+        .cosmic-text {
+            font-size: 2.5em;
+            font-weight: 100;
+            background: linear-gradient(45deg, #007BFF, #19A2A2, #E5E7EB);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+
+        /* تصميم 5: الشعار الكمي */
+        .quantum-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .quantum-field {
+            width: 120px;
+            height: 80px;
+            position: relative;
+        }
+
+        .wave {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #007BFF, transparent);
+        }
+
+        .wave-1 { top: 20px; animation: wave 2s ease-in-out infinite; }
+        .wave-2 { top: 40px; animation: wave 2.5s ease-in-out infinite 0.5s; }
+        .wave-3 { top: 60px; animation: wave 3s ease-in-out infinite 1s; }
+
+        .quantum-dot {
+            width: 6px;
+            height: 6px;
+            background: #19A2A2;
+            border-radius: 50%;
+            position: absolute;
+            animation: quantumJump 4s ease-in-out infinite;
+        }
+
+        .quantum-dot-1 { top: 18px; left: 30px; }
+        .quantum-dot-2 { top: 38px; left: 60px; animation-delay: 1s; }
+        .quantum-dot-3 { top: 58px; left: 90px; animation-delay: 2s; }
+
+        .quantum-text {
+            font-size: 1.9em;
+            font-weight: 600;
+            color: #E5E7EB;
+            letter-spacing: 1px;
+            text-transform: lowercase;
+        }
+
+        /* تصميم 6: الشعار الهولوجرافي */
+        .holographic-logo {
+            text-align: center;
+            position: relative;
+        }
+
+        .hologram-container {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .hologram-text {
+            font-size: 3em;
+            font-weight: 800;
+            background: linear-gradient(45deg, #007BFF, #19A2A2, #E5E7EB, #007BFF);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: hologramShift 4s ease-in-out infinite;
+            text-shadow: 0 0 50px rgba(0, 123, 255, 0.5);
+        }
+
+        .hologram-glitch {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 3em;
+            font-weight: 800;
+            color: rgba(0, 123, 255, 0.3);
+            animation: glitch 6s infinite;
+        }
+
+        .tagline-hologram {
+            color: rgba(229, 231, 235, 0.7);
+            font-size: 0.9em;
+            letter-spacing: 3px;
+        }
+
+        /* الحركات والتأثيرات */
+        @keyframes hexRotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes circuitFlow {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
+
+        @keyframes spin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: scaleX(0.5); opacity: 0.5; }
+            50% { transform: scaleX(1); opacity: 1; }
+        }
+
+        @keyframes quantumJump {
+            0%, 20%, 40%, 60%, 80%, 100% { transform: translateY(0); }
+            10% { transform: translateY(-8px); }
+            30% { transform: translateY(-12px); }
+            50% { transform: translateY(-6px); }
+            70% { transform: translateY(-10px); }
+            90% { transform: translateY(-4px); }
+        }
+
+        @keyframes hologramShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes glitch {
+            0%, 90%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        .usage-note {
+            background: rgba(0, 123, 255, 0.1);
+            border: 1px solid rgba(0, 123, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #E5E7EB;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>تصاميم إبداعية لشعار ATOMIC</h1>
+        <p style="color: #9CA3AF;">مجموعة متنوعة من الأفكار الإبداعية لهوية الشركة</p>
+    </div>
+
+    <div class="designs-grid">
+        <!-- تصميم 1: المضلع الهندسي -->
+        <div class="design-card">
+            <h3 class="design-title">الشعار الهندسي المضلع</h3>
+            <div class="geometric-logo">
+                <div class="geometric-icon">
+                    <div class="hexagon">
+                        <div class="inner-hexagon"></div>
+                    </div>
+                </div>
+                <div class="geometric-text">ATOMIC</div>
+            </div>
+        </div>
+
+        <!-- تصميم 2: حقل الجسيمات -->
+        <div class="design-card">
+            <h3 class="design-title">حقل الجسيمات المتحرك</h3>
+            <div class="particle-logo">
+                <div class="particle-field">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+                <div class="particle-text">atomic</div>
+            </div>
+        </div>
+
+        <!-- تصميم 3: الدوائر المستقبلية -->
+        <div class="design-card">
+            <h3 class="design-title">الدوائر المستقبلية</h3>
+            <div class="futuristic-logo">
+                <div class="circuit-icon">
+                    <div class="circuit-line circuit-line-1"></div>
+                    <div class="circuit-line circuit-line-2"></div>
+                    <div class="circuit-line circuit-line-3"></div>
+                    <div class="circuit-dot circuit-dot-1"></div>
+                    <div class="circuit-dot circuit-dot-2"></div>
+                </div>
+                <div class="futuristic-text">ATOMIC</div>
+            </div>
+        </div>
+
+        <!-- تصميم 4: النظام الكوكبي -->
+        <div class="design-card">
+            <h3 class="design-title">النظام الكوكبي</h3>
+            <div class="cosmic-logo">
+                <div class="solar-system">
+                    <div class="sun"></div>
+                    <div class="planet-orbit orbit-1">
+                        <div class="planet planet-1"></div>
+                    </div>
+                    <div class="planet-orbit orbit-2">
+                        <div class="planet planet-2"></div>
+                    </div>
+                    <div class="planet-orbit orbit-3">
+                        <div class="planet planet-3"></div>
+                    </div>
+                </div>
+                <div class="cosmic-text">ATOMIC</div>
+            </div>
+        </div>
+
+        <!-- تصميم 5: المجال الكمي -->
+        <div class="design-card">
+            <h3 class="design-title">المجال الكمي</h3>
+            <div class="quantum-logo">
+                <div class="quantum-field">
+                    <div class="wave wave-1"></div>
+                    <div class="wave wave-2"></div>
+                    <div class="wave wave-3"></div>
+                    <div class="quantum-dot quantum-dot-1"></div>
+                    <div class="quantum-dot quantum-dot-2"></div>
+                    <div class="quantum-dot quantum-dot-3"></div>
+                </div>
+                <div class="quantum-text">atomic</div>
+            </div>
+        </div>
+
+        <!-- تصميم 6: الهولوجرام -->
+        <div class="design-card">
+            <h3 class="design-title">التأثير الهولوجرافي</h3>
+            <div class="holographic-logo">
+                <div class="hologram-container">
+                    <div class="hologram-text">ATOMIC</div>
+                    <div class="hologram-glitch">ATOMIC</div>
+                </div>
+                <div class="tagline-hologram">SOFTWARE SOLUTIONS</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="usage-note">
+        <h3>ملاحظات الاستخدام</h3>
+        <p>• كل تصميم يحمل مفهوماً مختلفاً: الهندسة، الجسيمات، المستقبل، الفضاء، الكم، والهولوجرام</p>
+        <p>• التأثيرات المتحركة تجعل الشعارات مناسبة للمواقع والتطبيقات التفاعلية</p>
+        <p>• يمكن تحويل أي تصميم إلى نسخة ثابتة للمطبوعات</p>
+        <p>• الألوان المستخدمة متوافقة مع لوحة الألوان المرفقة</p>
+    </div>
+</body>
+</html>
