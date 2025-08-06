@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شعار شركة اتوميك</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 50%, #2A2A2A 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: white;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 60px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        .atom-icon {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            animation: rotate 10s linear infinite;
+        }
+
+        .nucleus {
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(45deg, #007BFF, #0A1C3C);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px #007BFF;
+            animation: pulse 2s ease-in-out infinite alternate;
+        }
+
+        .orbit {
+            position: absolute;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-1 {
+            width: 60px;
+            height: 60px;
+            border-color: rgba(0, 123, 255, 0.6);
+            animation: spin 4s linear infinite;
+        }
+
+        .orbit-2 {
+            width: 80px;
+            height: 30px;
+            border-color: rgba(25, 162, 162, 0.6);
+            animation: spin 6s linear infinite reverse;
+            transform: translate(-50%, -50%) rotateX(60deg);
+        }
+
+        .orbit-3 {
+            width: 70px;
+            height: 40px;
+            border-color: rgba(0, 123, 255, 0.4);
+            animation: spin 8s linear infinite;
+            transform: translate(-50%, -50%) rotateX(-45deg);
+        }
+
+        .electron {
+            width: 6px;
+            height: 6px;
+            background: #007BFF;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 0 10px #007BFF;
+        }
+
+        .electron-1 {
+            top: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .electron-2 {
+            top: 12px;
+            right: -3px;
+        }
+
+        .electron-3 {
+            bottom: 8px;
+            left: 15px;
+        }
+
+        .company-name {
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(45deg, #007BFF, #19A2A2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+            text-shadow: 0 0 30px rgba(0, 123, 255, 0.3);
+        }
+
+        .tagline {
+            font-size: 1em;
+            color: #E5E7EB;
+            text-align: center;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+
+        .logo-variants {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .variant {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .variant h3 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        .horizontal-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .horizontal-logo .atom-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .horizontal-logo .nucleus {
+            width: 10px;
+            height: 10px;
+        }
+
+        .horizontal-logo .orbit-1 {
+            width: 40px;
+            height: 40px;
+        }
+
+        .horizontal-logo .orbit-2 {
+            width: 50px;
+            height: 20px;
+        }
+
+        .horizontal-logo .orbit-3 {
+            width: 45px;
+            height: 25px;
+        }
+
+        .horizontal-logo .electron {
+            width: 4px;
+            height: 4px;
+        }
+
+        .horizontal-logo .company-name {
+            font-size: 1.8em;
+        }
+
+        .icon-only {
+            display: flex;
+            justify-content: center;
+        }
+
+        .monochrome .atom-icon {
+            filter: grayscale(100%);
+        }
+
+        .monochrome .nucleus {
+            background: #FFFFFF;
+            box-shadow: 0 0 20px #FFFFFF;
+        }
+
+        .monochrome .orbit {
+            border-color: rgba(255, 255, 255, 0.6) !important;
+        }
+
+        .monochrome .electron {
+            background: #FFFFFF;
+            box-shadow: 0 0 10px #FFFFFF;
+        }
+
+        .monochrome .company-name {
+            background: #FFFFFF;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            100% { transform: translate(-50%, -50%) scale(1.2); }
+        }
+
+        .download-info {
+            margin-top: 40px;
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo">
+            <div class="atom-icon">
+                <div class="nucleus"></div>
+                <div class="orbit orbit-1">
+                    <div class="electron electron-1"></div>
+                </div>
+                <div class="orbit orbit-2">
+                    <div class="electron electron-2"></div>
+                </div>
+                <div class="orbit orbit-3">
+                    <div class="electron electron-3"></div>
+                </div>
+            </div>
+            <div>
+                <div class="company-name">ATOMIC</div>
+                <div class="tagline">البرمجيات المتقدمة</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="logo-variants">
+        <div class="variant">
+            <h3>الشعار الأفقي</h3>
+            <div class="horizontal-logo">
+                <div class="atom-icon">
+                    <div class="nucleus"></div>
+                    <div class="orbit orbit-1">
+                        <div class="electron electron-1"></div>
+                    </div>
+                    <div class="orbit orbit-2">
+                        <div class="electron electron-2"></div>
+                    </div>
+                    <div class="orbit orbit-3">
+                        <div class="electron electron-3"></div>
+                    </div>
+                </div>
+                <div class="company-name">ATOMIC</div>
+            </div>
+        </div>
+
+        <div class="variant">
+            <h3>الرمز فقط</h3>
+            <div class="icon-only">
+                <div class="atom-icon">
+                    <div class="nucleus"></div>
+                    <div class="orbit orbit-1">
+                        <div class="electron electron-1"></div>
+                    </div>
+                    <div class="orbit orbit-2">
+                        <div class="electron electron-2"></div>
+                    </div>
+                    <div class="orbit orbit-3">
+                        <div class="electron electron-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="variant monochrome">
+            <h3>النسخة الأحادية اللون</h3>
+            <div class="horizontal-logo">
+                <div class="atom-icon">
+                    <div class="nucleus"></div>
+                    <div class="orbit orbit-1">
+                        <div class="electron electron-1"></div>
+                    </div>
+                    <div class="orbit orbit-2">
+                        <div class="electron electron-2"></div>
+                    </div>
+                    <div class="orbit orbit-3">
+                        <div class="electron electron-3"></div>
+                    </div>
+                </div>
+                <div class="company-name">ATOMIC</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="download-info">
+        <p>تم تصميم الشعار باستخدام الألوان: #007BFF (الأزرق الأساسي) و #19A2A2 (الأزرق المخضر)</p>
+        <p>الشعار متحرك ويمكن استخدامه في تطبيقات الويب والمواد التسويقية</p>
+    </div>
+</body>
+</html>
